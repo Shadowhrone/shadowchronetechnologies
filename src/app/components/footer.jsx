@@ -10,10 +10,10 @@ const footer = () => {
        
     ]
   return (
-    <div className='w-full  h-auto bg-[#021142] text-white  mx-auto flex justify-center items-center ' >
-     <div className='   py-15 grid grid-cols-[repeat(auto-fit,minmax(110px,auto))] justify-center items-start gap-[70px] w-[90%]    '>
+   
+     <div className='   py-15 grid xl:grid-cols-4 md:grid-cols-2 bg-[#021142] text-white justify-center items-start gap-[70px] w-full md:px-20  px-5  '>
        <div className='flex flex-col w-75 h-42  gap-4'>
-<Image src="/logo.svg" alt="logo" width={290} height={65} className=' '/>
+ <Image src="/logo.svg" alt="logo" width={250} height={76} className='w-[174px] h-[74px] lg:w-[250px] lg:h-[76px]'/>
        <p>Connect with us on our various social media platforms.</p>
        <div className='flex '>
          {
@@ -24,26 +24,26 @@ const footer = () => {
             ))}  
             </div>   
         </div>
-        <div className='flex flex-col w-[110px]  h-42 gap-4'>
+        <div className='flex flex-col  gap-4'>
             <h2 className='font-medium text-[20px]'>Company</h2>
             <Link  className='text-white/80' href='/product'>Products</Link>
             <Link  className='text-white/80' href='/service'>Services</Link>
             <Link  className='text-white/80' href='/blog'>Blog</Link>
         </div>
-        <div className='flex flex-col w-[150px]  h-42 gap-4'>
+        <div className='flex flex-col gap-4'>
               <h2 className='font-medium text-[20px]'>Resources</h2>
             <Link className='text-white/80' href='/product'>Template</Link>
             <Link className='text-white/80' href='/service'>Invoices</Link>
             <Link className='text-white/80' href='/blog'>Policies</Link>
         </div>
-        <div className='flex flex-col w-[350px]  h-42 gap-4'>
+        <div className='flex flex-col  gap-4'>
               <h2 className='font-medium text-[20px]'>Email</h2>
             <Link href='mailto:abimbola23@gmail.com' className='  py-3.5 pl-2.5 pr-5 bg-white/30 text-white '>abimbola23@gmail.com</Link>
             <p className='text-white/80'>Feel free to reach us through our email provided above, as we’ll alway respond in due time.</p>
            
         </div>
      </div>
-    </div>
+   
   )
 }
 

@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 export const metadata = {
-  title: "products | Shadowchrone tech",
+  title: " contact | Shadowchrone tech",
   description: "shadowchrone technologies ltd product page",
 };
 
