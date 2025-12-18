@@ -27,7 +27,7 @@ const sideBar = ({ handleToggleOff }) => {
         </div>
 
         {/* Main Links */}
-          <div className="flex flex-col gap-[30px] px-10">
+          <div className="flex flex-col gap-[30px]  px-10">
           <Link href="/" onClick={handleToggleOff} className="text-white text-[14px] font-semibold">Home</Link>
           <Link href="/product" onClick={handleToggleOff} className="text-white text-[14px] font-semibold">Products</Link>
           <Link href="/service" onClick={handleToggleOff} className="text-white text-[14px] font-semibold">Services</Link>

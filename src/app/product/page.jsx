@@ -37,7 +37,7 @@ const Page = () => {
             <h2 className="text-[#1225F5]">Shop</h2>
           </Link>
         </div>
-        <h1 className="text-[40px] leading-14 font-medium pt-6">
+        <h1 className="md:text-[40px] md:leading-14 font-medium pt-6 text-left text-2xl md:max-w-[75%] lg:max-w-[45%]">
           Explore Products <br /> Categories
         </h1>
       </div>
@@ -68,20 +68,20 @@ const Page = () => {
         filteredProducts.map((product, index) => (
           <div
             key={index}
-            className="w-full xl:px-40 px-10 py-16 flex gap-8 text-black"
+            className="w-full xl:px-40 px-10 py-16 grid grid-cols-1 lg:grid-cols-2 gap-8 text-black"
           >
             {/* IMAGE SECTION */}
-            <div className="min-w-[50%] flex flex-col items-center">
+            <div className="min-w-[50%] flex flex-col items-center ">
               <Image
                 src={selectedImages[index] || product.image[0]}
                 width={744}
                 height={400}
                 alt={product.name}
-                className="rounded-[8px] w-full h-[500px] object-fill"
+                className="rounded-[8px] lg:w-full md:w-[80%]  h-[450px]  lg:object-fill"
               />
 
               {/* THUMBNAILS */}
-              <div className="flex mt-4">
+              <div className="flex mt-4  overflow-x-scroll max-w-[100%] h-auto justify-between items-center no-scrollbar">
                 {product.image.map((img, idx) => (
                   <Image
                     key={idx}
@@ -108,7 +108,7 @@ const Page = () => {
             </div>
 
             {/* TEXT SECTION */}
-            <div className="min-w-[50%]">
+            <div className="lg:min-w-[50%] md:w-[80%]  mx-auto">
               <h2 className="text-black/60 font-semibold">
                 {product.category}
               </h2>
