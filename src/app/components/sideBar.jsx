@@ -7,10 +7,10 @@ import { Socials } from '../../../data/Socials'
 
 const sideBar = ({ handleToggleOff }) => {
   return (
-    <div className="fixed inset-0 z-[1000] flex">
+    <div className="fixed inset-0 z-[1000] h-full flex">
 
       {/* Sidebar */}
-      <div className="w-[70%] bg-[#021142] min-h-screen flex flex-col justify-between">
+      <div className="w-[70%] bg-[#021142]  flex flex-col justify-between">
 
         {/* Top Section */}
         <div className="flex items-center justify-between py-5 px-[30px]">
@@ -27,7 +27,7 @@ const sideBar = ({ handleToggleOff }) => {
         </div>
 
         {/* Main Links */}
-          <div className="flex flex-col gap-[30px] mt-[-200px] px-10">
+          <div className="flex flex-col gap-[30px] px-10">
           <Link href="/" onClick={handleToggleOff} className="text-white text-[14px] font-semibold">Home</Link>
           <Link href="/product" onClick={handleToggleOff} className="text-white text-[14px] font-semibold">Products</Link>
           <Link href="/service" onClick={handleToggleOff} className="text-white text-[14px] font-semibold">Services</Link>
