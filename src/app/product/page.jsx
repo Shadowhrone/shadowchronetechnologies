@@ -28,7 +28,7 @@ const Page = () => {
   return (
     <>
       {/* HERO */}
-      <div className="w-full bg-[#F7F5F5] h-[350px] text-black pt-40 pb-2.5 px-20">
+      <div className="w-full bg-[#F7F5F5] h-[350px] text-black pt-40 pb-2.5 md:px-20 px-5">
         <div className="text-[20px] flex font-medium">
           <Link href="/">
             <h2 className="text-black/20">Home |</h2>
@@ -43,7 +43,7 @@ const Page = () => {
       </div>
 
       {/* CATEGORY FILTER */}
-      <div className="flex justify-between items-center gap-10 overflow-x-scroll max-w-[70%] mx-auto no-scrollbar text-nowrap">
+      <div className="flex justify-between items-center gap-10 overflow-x-scroll md:max-w-[70%] max-w-[85%] mx-auto no-scrollbar text-nowrap">
         {categories.map((cat, index) => (
           <button
             key={index}
@@ -77,7 +77,7 @@ const Page = () => {
                 width={744}
                 height={400}
                 alt={product.name}
-                className="rounded-[8px] lg:w-full md:w-[80%]  h-[450px]  lg:object-fill"
+                className="rounded-[8px] lg:w-full md:w-[80%] lg:h-[450px]  lg:object-fill"
               />
 
               {/* THUMBNAILS */}
