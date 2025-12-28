@@ -18,9 +18,9 @@ export default function Home() {
     const items = [
            <div className="relative w-full h-auto" key="1">
     <Image src="/bgone.svg" width={1440} height={300} alt="Slide 2" className="w-full h-[725px] object-cover"  key="2" />
-    <div className='top-[360px] left-40 absolute z-1'>
-     <div className="backdrop-blur-xl bg-white/20 p-8 rounded-2xl shadow-lg w-130 text-left px-4 border   border-white/20">
-        <h1 className="text-6xl font-bold text-white">Automations for Smart Living</h1>
+    <div className='top-[360px] lg:left-40 left-10 absolute z-1'>
+     <div className="backdrop-blur-xl bg-white/20 p-8 rounded-2xl shadow-lg lg:w-130 w-[70%] text-left px-4 border   border-white/20">
+        <h1 className="md:text-5xl text-xl font-bold text-white">Automations for Smart Living</h1>
         <p className="mt-2 text-white/70">
          We blend smart automation with elegant design to craft intuitive, inspiring spaces.
         </p>
@@ -29,12 +29,12 @@ export default function Home() {
       </div>
     </div>,
          <div className="relative w-full h-auto" key="2">
-    <Image src="/bgtwo.svg" width={1440} height={300} alt="Slide 2" className="w-full h-[725px] object-cover"  key="2" />
-    <div className='top-[360px] left-40 absolute z-1'>
-     <div className="backdrop-blur-xl bg-white/20 p-8 rounded-2xl shadow-lg w-130 text-left px-4 border l  border-white/20">
-        <h1 className="text-6xl font-bold text-white">Automations for Smart Living</h1>
+    <Image src="/bgtwo.svg" width={1440} height={300} alt="Slide 2" className="w-full h-[725px]  object-cover"  key="2" />
+    <div className='top-[360px] lg:left-40 left-10 absolute z-1'>
+     <div className="backdrop-blur-xl bg-white/20 p-8 rounded-2xl shadow-lg lg:w-130 w-[70%] text-left px-4 border   border-white/20">
+        <h1 className="md:text-5xl text-xl font-bold text-white">Seamless Access and Control</h1>
         <p className="mt-2 text-white/70">
-         We blend smart automation with elegant design to craft intuitive, inspiring spaces.
+         We design our systems to deliver friction-less access across platforms, devices, and geographies.
         </p>
       </div>
       <button className="text-white px-[30px] py-[15px] mt-[15px] rounded-[8px] text-[18px] cursor-pointer hover:bg-blend-difference font-[600] bg-[#1B7DDE]">Get Quote</button>
@@ -42,11 +42,11 @@ export default function Home() {
     </div>,
           <div className="relative w-full h-auto" key="3">
     <Image src="/bgthree.svg" width={1440} height={300} alt="Slide 2" className="w-full h-[725px] object-cover"  key="2" />
-    <div className='top-[360px] left-40 absolute z-1'>
-     <div className="backdrop-blur-xl bg-white/20 p-8 rounded-2xl shadow-lg w-130 text-left px-4 border l  border-white/20">
-        <h1 className="text-6xl font-bold text-white">Automations for Smart Living</h1>
+    <div className='top-[360px] lg:left-40 left-10  absolute z-1'>
+     <div className="backdrop-blur-xl bg-white/20 p-8 rounded-2xl shadow-lg lg:w-130 w-[70%] text-left px-4 border border-white/20">
+        <h1 className="md:text-5xl text-xl font-bold text-white">Tamper-Resistant Locking Systems</h1>
         <p className="mt-2 text-white/70">
-         We blend smart automation with elegant design to craft intuitive, inspiring spaces.
+         We provide advanced security features that prevent intruders, and ensures uncompromising safety.
         </p>
       </div>
       <button className="text-white px-[30px] py-[15px] mt-[15px] bg-[#1B7DDE]  rounded-[8px] text-[18px] cursor-pointer hover:bg-blend-difference font-[600] ">Get Quote</button>
@@ -67,7 +67,7 @@ export default function Home() {
     />
   <Image src="/brand.svg" width={1440} height={300} alt="About Us" className="w-full h-auto mt-8  object-cover"  />
 <p className="text-center text-2xl font-medium pt-25 text-[#1225F5]">Features</p>
-<h1 className='text-center text-[45px]'>Our special Features</h1>
+<h1 className='text-center md:text-[45px] text-3xl'>Our special Features</h1>
 <Featurecards/>
       <section className="w-full h-auto flex justify-center items-center gap-10 mt-16 mb-20">
        <div className="w-[530px] h-auto">
@@ -90,8 +90,8 @@ export default function Home() {
        </div>
       </section>
     <section className='w-full h-auto text-center bg-[#021142] text-white py-[130px] flex justify-center flex-col items-center'>
-   <h1 className=" text-[40px] text-center mx-auto font-medium w-[680px]">Checkout Some Of Our Previous Project </h1>
-   <button className='mt-6 text-2xl'>Watch video</button>
+   <h1 className=" md:text-[40px] text-2xl text-center mx-auto font-medium ">Checkout Some Of Our Previous Project </h1>
+   <button className='mt-6 md:text-2xl text-lg'>Watch video</button>
     </section>
     <section>
           <Services/>
@@ -101,9 +101,9 @@ export default function Home() {
       <h1 className="text-[#1A78D6] text-[60px] font-medium ">Products</h1>
       <h2 className='font-medium text-[45px] w-[58%] leading-[56px] '>We offer wide range of products for ease and comfortability.</h2>
       <p className='pt-6 text-[#48454B]/80 text-[20px] font-medium w-[38%]'>Request for your desired product from us today, and get it delivered to you as soon as possible as we are reliable.</p>
-       <div className=" flex grid-cols-3 w-[100%]  mt-20 justify-center gap-8 items-center mx-auto">
+       <div className=" md:grid-cols-3 grid-cols-1 w-[100%] grid  mt-20 justify-center gap-8 items-center mx-auto">
         {products.map((product, index) => (
-          <div key={index} className=" max-w-[390px] py-10  shadow-xl   rounded-[25px]">
+          <div key={index} className=" md:min-w-[390px]  py-10  shadow-xl   rounded-[25px]">
           <div key={index} className=" flex  flex-col justify-between  items-center text-left  ">
              <Image src={product.image} width={320} height={286} alt='svg' className=' rounded-[18px]' />
               <h1 className='text-[24px] pt-[5px] font-semibold text-[#48454B]/80 leading-10 text-left'>{product.title}</h1>

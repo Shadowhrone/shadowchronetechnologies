@@ -28,7 +28,7 @@ const Page = () => {
   return (
     <>
       {/* HERO */}
-      <div className="w-full bg-[#F7F5F5] h-[350px] text-black pt-40 pb-2.5 md:px-20 px-5">
+      <div className="w-full bg-[#F7F5F5] lg:h-[350px] text-black pt-40 pb-2.5 md:px-20 px-5">
         <div className="text-[20px] flex font-medium">
           <Link href="/">
             <h2 className="text-black/20">Home |</h2>
@@ -112,8 +112,8 @@ const Page = () => {
               <h2 className="text-black/60 font-semibold">
                 {product.category}
               </h2>
-              <h1 className="text-[32px] font-semibold">{product.name}</h1>
-              <h2 className="text-[40px] font-bold pt-4">
+              <h1 className="md:text-[32px] text-2xl font-semibold">{product.name}</h1>
+              <h2 className="md:text-[40px] text-3xl font-bold pt-4">
                 ₦ {product.price}
               </h2>
 
