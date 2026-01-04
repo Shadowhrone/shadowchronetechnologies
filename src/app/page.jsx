@@ -69,11 +69,12 @@ export default function Home() {
 <p className="text-center text-2xl font-medium pt-25 text-[#1225F5]">Features</p>
 <h1 className='text-center md:text-[45px] text-3xl'>Our special Features</h1>
 <Featurecards/>
-      <section className="w-full h-auto flex justify-center items-center gap-10 mt-16 mb-20">
-       <div className="w-[530px] h-auto">
+<section className=" flex justify-center items-center">
+      <div className=" h-auto grid lg:grid-cols-2  items-center justify-center px-6 gap-10 mt-16 mb-20">
+       <div className="max-w-[541px]  h-auto">
         <h2 className='text-[#1225F5] text-[20px]'>About the Company</h2>
-        <h1 className="text-[40px] font-medium mt-[23px]">We render technology solutions for ease and Comfortability.</h1>
-        <p className="text-[20px] text-[#48454B]/80 font-medium">In a world where complexity often overshadows convenience, we believe technology should be intuitive, seamless, and tailored to the rhythm of everyday life.</p>
+        <h1 className="lg:text-[40px] text-3xl font-medium mt-[23px]">We render technology solutions for ease and Comfortability.</h1>
+        <p className="lg:text-[20px]  text-[#48454B]/80 font-medium">In a world where complexity often overshadows convenience, we believe technology should be intuitive, seamless, and tailored to the rhythm of everyday life.</p>
         <hr className="border-[#C4C4C4] mt-[16px]"/>
         <h2 className='text-[#1225F5] text-[20px] pt-6'>Shadow Chrone Technologies Specializes In:</h2>
               <p className="font-[600] pt-4 pb-[12px] flex justify-left items-center gap-1"><Image src='/tick.svg' alt="tick" width={22} height={22}/>Automations</p>
@@ -81,29 +82,31 @@ export default function Home() {
         <p className="font-[600] pb-[12px] flex justify-left items-center gap-1"><Image src='/tick.svg' alt="tick" width={22} height={22}/>Security and Safety</p>
         <p className=" font-[600] pb-[12px] flex justify-left items-center gap-1"><Image src='/tick.svg' alt="tick" width={22} height={22}/>Elevators and Escalators</p>
        </div>
-       <div className='relative w-auto flex justify-center items-center gap-3'>
+       <div className='relative max-w-[541px] flex justify-center items-center gap-3'>
         <Image src="/illone.svg" width={249} height={441} alt="illone"  />
         <div className='relative w-auto flex flex-col justify-center items-center gap-3'>
          <Image src="/illtwo.svg" width={285} height={300} alt="illtwo"  />
           <Image src="/illthree.svg" width={285} height={300} alt="illthree"  />
           </div>
        </div>
+      </div>
       </section>
     <section className='w-full h-auto text-center bg-[#021142] text-white py-[130px] flex justify-center flex-col items-center'>
-   <h1 className=" md:text-[40px] text-2xl text-center mx-auto font-medium ">Checkout Some Of Our Previous Project </h1>
+   <h1 className=" md:text-[40px] text-2xl text-center px-4.5 font-medium ">Checkout Some Of Our Previous Project </h1>
    <button className='mt-6 md:text-2xl text-lg'>Watch video</button>
     </section>
     <section>
           <Services/>
      
     </section>
-    <section className=" px-5 md:px-20 py-20 ">
-      <h1 className="text-[#1A78D6] text-[60px] font-medium ">Products</h1>
-      <h2 className='font-medium text-[45px] w-[58%] leading-[56px] '>We offer wide range of products for ease and comfortability.</h2>
-      <p className='pt-6 text-[#48454B]/80 text-[20px] font-medium w-[38%]'>Request for your desired product from us today, and get it delivered to you as soon as possible as we are reliable.</p>
-       <div className=" md:grid-cols-3 grid-cols-1 w-[100%] grid  mt-20 justify-center gap-8 items-center mx-auto">
+    <section className=" px-5 md:px-8 lg:px-20 py-20 ">
+      <h1 className="text-[#1A78D6] lg:text-[60px] md:text-5xl text-4xl font-medium ">Products</h1>
+      <h2 className='font-medium md:text-[45px] text-3xl xl:w-[58%] w-[95%] leading-[56px] '>We offer wide range of products for ease and comfortability.</h2>
+      <p className='pt-6 text-[#48454B]/80 text-[20px] font-medium xl:w-[38%] w-[60%]'>Request for your desired product from us today, and get it delivered to you as soon as possible as we are reliable.</p>
+      
+       <div className=" w-full  md:grid-cols-3 grid-cols-1  grid  mt-20 justify-center gap-8 items-center mx-auto">
         {products.map((product, index) => (
-          <div key={index} className=" md:min-w-[390px]  py-10  shadow-xl   rounded-[25px]">
+          <div key={index} className="   py-10  shadow-xl  rounded-[25px]">
           <div key={index} className=" flex  flex-col justify-between  items-center text-left  ">
              <Image src={product.image} width={320} height={286} alt='svg' className=' rounded-[18px]' />
               <h1 className='text-[24px] pt-[5px] font-semibold text-[#48454B]/80 leading-10 text-left'>{product.title}</h1>
@@ -114,6 +117,7 @@ export default function Home() {
             </div>
         ))}
         </div>
+       
     </section>
     <Footer/>
     </div>
