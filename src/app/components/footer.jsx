@@ -38,7 +38,7 @@ const footer = () => {
         </div>
         <div className='flex flex-col  gap-4'>
               <h2 className='font-medium text-[20px]'>Email</h2>
-            <Link href='mailto:abimbola23@gmail.com' className='  py-3.5 pl-2.5 pr-5 bg-white/30 text-white '>abimbola23@gmail.com</Link>
+            <Link href='mailto:abimbola23@gmail.com' className='  py-3.5 pl-2.5 pr-5 bg-white/30 text-white '>chronetechnologies@gmail.com</Link>
             <p className='text-white/80'>Feel free to reach us through our email provided above, as we’ll alway respond in due time.</p>
            
         </div>

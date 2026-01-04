@@ -82,8 +82,8 @@ export default function Home() {
         <p className="font-[600] pb-[12px] flex justify-left items-center gap-1"><Image src='/tick.svg' alt="tick" width={22} height={22}/>Security and Safety</p>
         <p className=" font-[600] pb-[12px] flex justify-left items-center gap-1"><Image src='/tick.svg' alt="tick" width={22} height={22}/>Elevators and Escalators</p>
        </div>
-       <div className='relative max-w-[541px] flex justify-center items-center gap-3'>
-        <Image src="/illone.svg" width={249} height={441} alt="illone"  />
+       <div className='relative max-w-[541px] flex justify-center flex-col  md:flex-row items-center gap-3'>
+        <Image src="/illone.svg" width={249} height={441} alt="illone" className="md:w-[249px] md:h-[441px] w-[285px] h-[300px] object-cover" />
         <div className='relative w-auto flex flex-col justify-center items-center gap-3'>
          <Image src="/illtwo.svg" width={285} height={300} alt="illtwo"  />
           <Image src="/illthree.svg" width={285} height={300} alt="illthree"  />
@@ -107,7 +107,7 @@ export default function Home() {
        <div className=" w-full  md:grid-cols-3 grid-cols-1  grid  mt-20 justify-center gap-8 items-center mx-auto">
         {products.map((product, index) => (
           <div key={index} className="   py-10  shadow-xl  rounded-[25px]">
-          <div key={index} className=" flex  flex-col justify-between  items-center text-left  ">
+          <div key={index} className=" flex  flex-col justify-between  items-center text-center  ">
              <Image src={product.image} width={320} height={286} alt='svg' className=' rounded-[18px]' />
               <h1 className='text-[24px] pt-[5px] font-semibold text-[#48454B]/80 leading-10 text-left'>{product.title}</h1>
              
