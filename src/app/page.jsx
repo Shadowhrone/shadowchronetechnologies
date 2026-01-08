@@ -6,14 +6,15 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import Featurecards from "./components/featurecards";
 import Services from "./components/services";
 import Footer from "./components/footer";
+import Link from "next/link";
 
 
 
 export default function Home() {
   const products = [
-    {title:"Biometric Card Attendance",image:'/pfour.svg', description:'Get premium quality Biometric Card Attendance systems for accurate and reliable staff management.'},
-     {title:"Hotel Card Door Lock",image:'/pone.svg', description:'Get your Hotel Card Door Lock system for maximum security and seamless guest access.'},
-      {title:"Inventory Software",image:'/pfour.svg', description:'Get your Smart inventory management software that helps you track stock, manage sales, and stay organized.'}
+    {title:"Biometric Card Attendance",image:'/attend.png', description:'Get premium quality Biometric Card Attendance systems for accurate and reliable staff management.'},
+     {title:"Hotel Card Door Lock",image:'/smartlock.png', description:'Get your Hotel Card Door Lock system for maximum security and seamless guest access.'},
+      {title:"Inventory Software",image:'/inventory.png', description:'Get your Smart inventory management software that helps you track stock, manage sales, and stay organized.'}
   ]
     const items = [
            <div className="relative w-full h-auto" key="1">
@@ -104,20 +105,26 @@ export default function Home() {
       <h2 className='font-medium md:text-[45px] text-3xl xl:w-[58%] w-[95%] leading-[56px] '>We offer wide range of products for ease and comfortability.</h2>
       <p className='pt-6 text-[#48454B]/80 text-[20px] font-medium xl:w-[38%] w-[60%]'>Request for your desired product from us today, and get it delivered to you as soon as possible as we are reliable.</p>
       
-       <div className=" w-full  md:grid-cols-3 grid-cols-1  grid  mt-20 justify-center gap-8 items-center mx-auto">
+       <div className=" w-full  xl:grid-cols-3 md:grid-cols-2 grid-cols-1 max-w-[90%]  grid  mt-20 justify-center gap-8 items-center mx-auto">
         {products.map((product, index) => (
-          <div key={index} className="   py-10  shadow-xl  rounded-[25px]">
-          <div key={index} className=" flex  flex-col justify-between  items-center text-center  ">
-             <Image src={product.image} width={320} height={286} alt='svg' className=' rounded-[18px]' />
-              <h1 className='text-[24px] pt-[5px] font-semibold text-[#48454B]/80 leading-10 text-left'>{product.title}</h1>
+          <div key={index} className="   py-10  px-8 shadow-xl h-full  rounded-[25px]">
+          <div key={index} className=" flex  flex-col justify-between h-full  items-center  ">
+             <Image src={product.image} width={320} height={286} alt='svg' className=' rounded-[18px] ' />
+             <div className="flex flex-col justify-center items-left ">
+              <h1 className='md:text-[24px] text-[20px] pt-[5px] font-semibold text-[#48454B]/80  '>{product.title}</h1>
              
-              <p className='text-[14px] font-medium text-black/50 text-center w-[80%]'>{product.description}</p>
-              <button className='text-white text-medium bg-[#1A78D6] text-center rounded-bl-[8px] cursor-pointer rounded-tr-[8px] w-[176px] py-[18px] mt-[50px]'>Get a quote</button>
+              <p className='text-[14px] font-medium text-black/50  '>{product.description}</p>
+             
+              </div>
+               <div className="flex flex-col justify-center   w-full items-left ">
+               <button className='text-white text-medium bg-[#030D3C] text-center rounded-bl-[8px] cursor-pointer rounded-tr-[8px] w-[176px] py-[18px] mt-[50px]'>Buy Now</button>
+                </div>
             </div>
             </div>
         ))}
-        </div>
        
+        </div>
+        <Link href="/product"><button className="bg-[#1A78D6] text-white mt-14 py-5 md:mx-16 px-5 rounded-lg text-[20px] cursor-pointer font-medium">VIEW ALL PRODUCTS</button></Link>
     </section>
     <Footer/>
     </div>

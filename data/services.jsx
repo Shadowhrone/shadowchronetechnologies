@@ -20,7 +20,7 @@ export const Services = [
     },
 
      {
-      title: 'Smart Fingerprint Door Lock',
+      title: 'Smart Door Lock',
       description: 'In the age of smart living, the humble door lock has undergone a radical transformation. No longer reliant on keys or codes, smart fingerprint door locks use bio-metric technology to offer personalized, secure, and seamless access to homes, offices, and facilities. They’re not just locks—they’re intelligent guardians. Get your Smart Fingerprint Door Locks installed now to enjoy ease in technology',
       image:'/fingerprintdoorlock.webp',
       icon:'/fingerprintserv.svg' 

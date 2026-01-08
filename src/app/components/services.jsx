@@ -22,23 +22,6 @@ const services = [
       "We install boom barriers, and also fix access control systems.",
     img: "/boombar.svg",
   },
-    {
-    title: "Installation of Elevators and Escalators",
-    description: "We install and fix elevators and escalators",
-    img: "/elev.svg",
-  },
-  {
-    title: "Installation of Automatic Remote Gates and Doors",
-    description:
-      "We install and fix automatic remote gates, roller shutters and garage doors, and automatic sensor doors",
-    img: "/gate.svg",
-  },
-  {
-    title: "Installation of Boom Barriers and Access Control System",
-    description:
-      "We install boom barriers, and also fix access control systems.",
-    img: "/boombar.svg",
-  },
 ];
 
 export default function Services() {
@@ -49,79 +32,112 @@ export default function Services() {
 
     const container = scrollRef.current;
     const firstCard = container.querySelector(".service-card");
+
     const cardWidth = firstCard
-      ? firstCard.offsetWidth +
-        parseInt(getComputedStyle(firstCard).marginRight || 0)
-      : 925;
+      ? firstCard.offsetWidth + 24
+      : 300;
 
     if (direction === "right") {
-      // If at (or near) the end → reset to start
-      if (container.scrollLeft + container.offsetWidth >= container.scrollWidth - 10) {
+      if (
+        container.scrollLeft + container.offsetWidth >=
+        container.scrollWidth - 10
+      ) {
         container.scrollTo({ left: 0, behavior: "smooth" });
       } else {
         container.scrollBy({ left: cardWidth, behavior: "smooth" });
       }
     } else {
-      // If at (or near) the start → jump to end
       if (container.scrollLeft <= 0) {
-        container.scrollTo({ left: container.scrollWidth, behavior: "smooth" });
+        container.scrollTo({
+          left: container.scrollWidth,
+          behavior: "smooth",
+        });
       } else {
         container.scrollBy({ left: -cardWidth, behavior: "smooth" });
       }
     }
   };
 
-  // 🔹 Auto scroll every 4 seconds
   useEffect(() => {
-    const interval = setInterval(() => {
-      scroll("right");
-    }, 4000);
+    const interval = setInterval(() => scroll("right"), 4000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="w-full max-w-[1538px] mx-auto py-20">
-      <h1 className="text-[45px] font-medium text-center text-[#1A78D6] mb-8">Our Services</h1>
+    <section className="w-full max-w-[1538px] mx-auto px-4 py-16">
+      <h1 className="text-3xl sm:text-4xl lg:text-[45px] font-medium text-center text-[#1A78D6] mb-10">
+        Our Services
+      </h1>
 
-      <div className="relative justify-center flex items-center">
-        {/* Left arrow */}
+      <div className="relative flex items-center justify-center">
+        {/* Left Arrow – hidden on mobile */}
         <button
-          aria-label="scroll left"
           onClick={() => scroll("left")}
-          className="absolute left-2 z-20 bg-white p-2 rounded-full shadow hover:bg-gray-100"
-          type="button"
+          className="hidden md:flex absolute left-2 z-20 bg-white p-2 rounded-full shadow hover:bg-gray-100"
         >
           <ChevronLeft size={24} />
         </button>
 
-        {/* Scrollable container */}
+        {/* Scroll container */}
         <div
           ref={scrollRef}
-          className="flex overflow-x-auto w-[95%] gap-6 px-6 hide-scrollbar py-2 scroll-smooth"
+          className="flex gap-6 overflow-x-auto scroll-smooth w-full px-2 sm:px-6 md:px-12 hide-scrollbar"
         >
           {services.map((service, idx) => (
             <div
               key={idx}
-              className="service-card min-w-[925px] max-w-[925px] flex-shrink-0 rounded-2xl shadow-md relative"
+              className="
+                service-card
+                flex-shrink-0
+                w-[85vw]
+                sm:w-[70vw]
+                md:w-[60vw]
+                lg:w-[900px]
+                rounded-2xl
+                shadow-md
+                bg-white
+               
+              "
             >
-              <h2 className="text-2xl text-center font-semibold py-3 text-black px-4">
+              <h2 className="text-lg sm:text-xl lg:text-2xl text-center font-semibold py-4 px-4">
                 {service.title}
               </h2>
 
-              <div className="w-full relative">
+              <div className="relative w-full ">
                 <Image
                   src={service.img}
-                  width={800}
-                  height={400}
+                  width={900}
+                  height={500}
                   alt={service.title}
-                  className="w-full h-[500px] object-cover rounded-2xl"
+                  className="
+                    w-full
+                    h-[220px]
+                    sm:h-[300px]
+                    md:h-[380px]
+                    lg:h-[500px]
+                    object-cover
+                    rounded-2xl
+                  "
                 />
 
-                <div className="backdrop-blur-xl bg-white/20 p-6 absolute bottom-6 w-85 left-6 right-6 rounded-2xl shadow-lg border border-white/20">
-                  <p className="text-lg font-medium text-white">
+                <div className="
+                  absolute
+                  bottom-4
+                  left-4
+                  right-4
+                  backdrop-blur-xl
+                  bg-white/20
+                  p-4
+                  sm:p-5
+                  md:p-6
+                  rounded-2xl
+                  border border-white/20
+                w-[50%]">
+                  <p className="text-sm sm:text-base lg:text-lg text-white font-medium">
                     {service.description}
                   </p>
-                  <button className="bg-[#030D3C] py-2 px-4 text-lg text-white rounded-lg mt-4 hover:bg-blue-800 cursor-pointer">
+
+                  <button className="bg-[#030D3C] py-2 px-4 text-sm sm:text-base text-white rounded-lg mt-3 hover:bg-blue-800">
                     Contact us
                   </button>
                 </div>
@@ -130,16 +146,14 @@ export default function Services() {
           ))}
         </div>
 
-        {/* Right arrow */}
+        {/* Right Arrow – hidden on mobile */}
         <button
-          aria-label="scroll right"
           onClick={() => scroll("right")}
-          className="absolute right-2 z-20 bg-white p-2 rounded-full shadow hover:bg-gray-100"
-          type="button"
+          className="hidden md:flex absolute right-2 z-20 bg-white p-2 rounded-full shadow hover:bg-gray-100"
         >
           <ChevronRight size={24} />
         </button>
       </div>
-    </div>
+    </section>
   );
 }
