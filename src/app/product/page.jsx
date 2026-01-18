@@ -1,6 +1,6 @@
 
 import { getProducts } from "../../../lib/api";
-import ProductClient from "../product/ProdutClient";
+import ProductClient from "./ProductClient";
 
 export const revalidate = 60;
 
