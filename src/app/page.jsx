@@ -7,7 +7,7 @@ import Featurecards from "./components/featurecards";
 import Services from "./components/services";
 import Footer from "./components/footer";
 import Link from "next/link";
-
+import {reviews} from "../../data/Reviews";
 
 
 export default function Home() {
@@ -117,7 +117,11 @@ export default function Home() {
              
               </div>
                <div className="flex flex-col justify-center   w-full items-left ">
-               <button className='text-white text-medium bg-[#030D3C] text-center rounded-bl-[8px] cursor-pointer rounded-tr-[8px] w-[176px] py-[18px] mt-[50px]'>Buy Now</button>
+               <button className='text-white text-medium bg-[#030D3C] text-center rounded-bl-[8px] cursor-pointer rounded-tr-[8px] w-[176px] py-[18px] mt-[50px]'  onClick={() => {
+    const message = `Hi, I want to make an inquiry about the ${product.title}`;
+    const url = `https://wa.me/2348080476742?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  }}>Buy Now</button>
                 </div>
             </div>
             </div>
@@ -126,6 +130,19 @@ export default function Home() {
         </div>
         <Link href="/product"><button className="bg-[#1A78D6] text-white mt-14 py-5 md:mx-16 px-5 rounded-lg text-[20px] cursor-pointer font-medium">VIEW ALL PRODUCTS</button></Link>
     </section>
+    <div className="w-full bg-[#021142] h-auto mb-10  py-10">
+      <p className='text-white text-center lg:text-[34px] md:text-3xl md:px-0 px-3 text-2xl'>Check-Out Reviews From Our Clients</p>
+      <div className="grid md:grid-cols-3 max-w-[70%]  mt-7 w-full gap-8 h-auto mx-auto">
+        {
+        reviews.map((item, index) => (
+          <div key={index} className="text-[#48454B] bg-white rounded-lg px-3 border border-[#1225F5] text-center py-5 ">
+            <h2 className="text-[20px] font-semibold">{item.name}</h2>
+            <p className="text-[16px] text-black/50 font-medium italic">"{item.review}"</p>
+          </div>
+        ))
+        }
+      </div>
+    </div>
     <Footer/>
     </div>
   );

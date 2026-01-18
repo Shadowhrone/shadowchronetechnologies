@@ -1,13 +1,15 @@
-'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import  {Services} from "../../../data/services"
+//import  {Services} from "../../../data/services"
 import Button from './components/Button'
+import { getServices } from "../../../lib/api";
 
-const Page = () => {
-  
+export const revalidate = 60;
+
+export const Page = async () => {
+    const Services= await getServices(); // Server-side fetch
 
   return (
     <>

@@ -132,12 +132,16 @@ export default function Services() {
                   md:p-6
                   rounded-2xl
                   border border-white/20
-                w-[50%]">
+                md:w-[50%] w-auto">
                   <p className="text-sm sm:text-base lg:text-lg text-white font-medium">
                     {service.description}
                   </p>
 
-                  <button className="bg-[#030D3C] py-2 px-4 text-sm sm:text-base text-white rounded-lg mt-3 hover:bg-blue-800">
+                  <button className="bg-[#030D3C] py-2 px-4 text-sm sm:text-base text-white rounded-lg mt-3 hover:bg-blue-800"  onClick={() => {
+    const message = `Hi, I want to make an inquiry about the ${service.title}`;
+    const url = `https://wa.me/2348080476742?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  }}>
                     Contact us
                   </button>
                 </div>

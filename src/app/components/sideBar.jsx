@@ -33,7 +33,11 @@ const sideBar = ({ handleToggleOff }) => {
           <Link href="/service" onClick={handleToggleOff} className="text-white text-[14px] font-semibold">Services</Link>
           <Link href="/blog" onClick={handleToggleOff} className="text-white text-[14px] font-semibold">Blog</Link>
            <Link href="/contact" onClick={handleToggleOff} className="text-white text-[14px] font-semibold">Contact</Link>
-            <Link href="/" onClick={handleToggleOff} className="text-white text-[14px] font-semibold">Get a Quote</Link>
+            <Link href="/"  className="text-white text-[14px] font-semibold"  onClick={() => {
+    const message = `Hi, I want to make an inquiry about your services/products.`;
+    const url = `https://wa.me/2348080476742?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  }}>Get a Quote</Link>
         </div>
 
         {/* Footer */}
