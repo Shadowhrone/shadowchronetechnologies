@@ -41,3 +41,48 @@ export async function getProducts() {
       : [],
   }));
 }
+
+// for blog posts cards 
+export async function getBlogs() {
+  const res = await client.getEntries({
+    content_type: "blog",
+    order: "-sys.createdAt",
+  });
+
+  return res.items.map((item) => ({
+    id: item.sys.id,
+    title: item.fields.title,
+    excerpt: item.fields.excerpt,
+    author: item.fields.author,
+    date: item.sys.createdAt,
+    slug: item.fields.slug,
+    image: item.fields.image?.fields?.file?.url
+      ? `https:${item.fields.image.fields.file.url}`
+      : null,
+  }));
+}
+
+
+
+// for single blog post page
+export async function getSingleBlog(slug) {
+  const res = await client.getEntries({
+    content_type: "blog",
+    "fields.slug": slug,
+   
+  });
+
+  const item = res.items[0];
+
+  if (!item) return null;
+
+  return {
+    title: item.fields.title,
+    author: item.fields.author,
+    date: item.sys.createdAt,
+    image: item.fields.image?.fields?.file?.url
+      ? `https:${item.fields.image.fields.file.url}`
+      : null,
+    content: item.fields.content, // rich text
+  };
+}
