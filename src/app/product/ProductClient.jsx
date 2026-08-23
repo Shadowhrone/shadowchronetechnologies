@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { number } from "../../../data/number";
 
 export default function ProductsClient({ products }) {
   const [category, setCategory] = useState('All')
@@ -26,7 +27,7 @@ export default function ProductsClient({ products }) {
   return (
     <>
       {/* HERO */}
-      <div className="w-full bg-[#F7F5F5] text-black lg:h-[350px] pt-40 pb-2.5 md:px-20 px-5">
+      <div className="w-full bg-[#F7F5F5] text-black lg:h-87.5 pt-40 pb-2.5 md:px-20 px-5">
         <div className="text-[20px] flex font-medium">
           <Link href="/">
             <h2 className="text-black/20">Home |</h2>
@@ -83,7 +84,7 @@ export default function ProductsClient({ products }) {
                 width={744}
                 height={400}
                 alt={product.name}
-                className="rounded-[8px] lg:w-full md:w-[80%] lg:h-[450px] lg:object-fill"
+                className="rounded-lg lg:w-full md:w-[80%] lg:h-112.5 lg:object-fill"
               />
 
               {/* THUMBNAILS */}
@@ -101,7 +102,7 @@ export default function ProductsClient({ products }) {
                         [index]: img,
                       }))
                     }
-                    className={` w-[50px] h-[50px]  md:w-[80px] md:h-[80px] cursor-pointer rounded-lg ${
+                    className={` w-12.5 h-12.5  md:w-20 md:h-20 cursor-pointer rounded-lg ${
                       selectedImages[index] === img && "ring-2 ring-[#0F4082]"
                     }`}
                   />
@@ -131,7 +132,7 @@ export default function ProductsClient({ products }) {
 
               <button className="bg-[#030D3C] text-white py-3 px-6 mt-10 rounded hover:bg-blue-900" onClick={() => {
     const message = `Hi, I want to purchase ${product.name}`;
-    const url = `https://wa.me/2348080476742?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   }}>
                 Buy Now

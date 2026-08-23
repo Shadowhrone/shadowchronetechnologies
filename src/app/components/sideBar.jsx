@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { FaTimes } from "react-icons/fa";
 import Image from 'next/image'
 import { Socials } from '../../../data/Socials'
+import { number } from '../../../data/number';
 
 const sideBar = ({ handleToggleOff }) => {
   return (
@@ -35,7 +36,7 @@ const sideBar = ({ handleToggleOff }) => {
            <Link href="/contact" onClick={handleToggleOff} className="text-white text-[14px] font-semibold">Contact</Link>
             <Link href="/"  className="text-white text-[14px] font-semibold"  onClick={() => {
     const message = `Hi, I want to make an inquiry about your services/products.`;
-    const url = `https://wa.me/2348080476742?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   }}>Get a Quote</Link>
         </div>

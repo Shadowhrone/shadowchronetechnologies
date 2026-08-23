@@ -1,4 +1,4 @@
-import { Inter, Poppins } from "next/font/google";
+import { Inter, Poppins, Kreon } from "next/font/google";
 import "./globals.css";
 import { Weight } from "lucide-react";
 
@@ -15,6 +15,12 @@ const poppins = Poppins({
    weight: ["400", "600", "700"],
 });
 
+const kreon = Kreon({
+  variable: "--font-kreon",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
+
 export const metadata = {
   title: "Home | Shadowchrone tech",
   description: "shadowchrone technologies ltd Home page",
@@ -24,7 +30,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${poppins.variable} antialiased`}
+        className={`${inter.variable} ${poppins.variable} ${kreon.variable} antialiased`}
       >
          
         {children}

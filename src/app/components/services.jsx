@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { number } from "../../../data/number";
 
 const services = [
   {
@@ -139,7 +140,7 @@ export default function Services() {
 
                   <button className="bg-[#030D3C] py-2 px-4 text-sm sm:text-base text-white rounded-lg mt-3 hover:bg-blue-800"  onClick={() => {
     const message = `Hi, I want to make an inquiry about the ${service.title}`;
-    const url = `https://wa.me/2348080476742?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   }}>
                     Contact us

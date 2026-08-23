@@ -8,6 +8,8 @@ import Services from "./components/services";
 import Footer from "./components/footer";
 import Link from "next/link";
 import {reviews} from "../../data/Reviews";
+import {number} from "../../data/number";
+import CompStack from "./components/CompStack";
 
 
 export default function Home() {
@@ -26,7 +28,11 @@ export default function Home() {
          We blend smart automation with elegant design to craft intuitive, inspiring spaces.
         </p>
       </div>
-      <button className="text-white px-[30px] py-[15px] mt-[15px] rounded-[8px] text-[18px] cursor-pointer hover:bg-blend-difference font-[600] bg-[#1B7DDE]">Get Quote</button>
+      <button className="text-white px-[30px] py-[15px] mt-[15px] rounded-[8px] text-[18px] cursor-pointer hover:bg-blend-difference font-[600] bg-[#1B7DDE]" onClick={() => {
+          const message = `Hi, I want to make an inquiry about our services/products.`;
+          const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+          window.open(url, "_blank");
+        }}>Get Quote</button>
       </div>
     </div>,
          <div className="relative w-full h-auto" key="2">
@@ -38,7 +44,11 @@ export default function Home() {
          We design our systems to deliver friction-less access across platforms, devices, and geographies.
         </p>
       </div>
-      <button className="text-white px-[30px] py-[15px] mt-[15px] rounded-[8px] text-[18px] cursor-pointer hover:bg-blend-difference font-[600] bg-[#1B7DDE]">Get Quote</button>
+      <button className="text-white px-[30px] py-[15px] mt-[15px] rounded-[8px] text-[18px] cursor-pointer hover:bg-blend-difference font-[600] bg-[#1B7DDE]" onClick={() => {
+          const message = `Hi, I want to make an inquiry about our services/products.`;
+          const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+          window.open(url, "_blank");
+        }}>Get Quote</button>
       </div>
     </div>,
           <div className="relative w-full h-auto" key="3">
@@ -50,7 +60,11 @@ export default function Home() {
          We provide advanced security features that prevent intruders, and ensures uncompromising safety.
         </p>
       </div>
-      <button className="text-white px-[30px] py-[15px] mt-[15px] bg-[#1B7DDE]  rounded-[8px] text-[18px] cursor-pointer hover:bg-blend-difference font-[600] ">Get Quote</button>
+      <button className="text-white px-[30px] py-[15px] mt-[15px] bg-[#1B7DDE]  rounded-[8px] text-[18px] cursor-pointer hover:bg-blend-difference font-[600] " onClick={() => {
+          const message = `Hi, I want to make an inquiry about our services/products.`;
+          const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+          window.open(url, "_blank");
+        }}>Get Quote</button>
       </div>
     </div>,
   ];
@@ -66,8 +80,9 @@ export default function Home() {
        disableButtonsControls
        autoPlayInterval={3000}
     />
-  <Image src="/brand.svg" width={1440} height={300} alt="About Us" className="w-full h-auto mt-8  object-cover"  />
-<p className="text-center text-2xl font-medium pt-25 text-[#1225F5]">Features</p>
+ 
+  <CompStack/>
+<p className="text-center text-2xl font-medium pt-20 text-[#1225F5]">Features</p>
 <h1 className='text-center md:text-[45px] text-3xl'>Our special Features</h1>
 <Featurecards/>
 <section className=" flex justify-center items-center">
@@ -92,10 +107,12 @@ export default function Home() {
        </div>
       </div>
       </section>
+      {/* not sure if this section is needed, but I will leave it here for now
     <section className='w-full h-auto text-center bg-[#021142] text-white py-[130px] flex justify-center flex-col items-center'>
    <h1 className=" md:text-[40px] text-2xl text-center px-4.5 font-medium ">Checkout Some Of Our Previous Project </h1>
    <button className='mt-6 md:text-2xl text-lg'>Watch video</button>
     </section>
+    */}
     <section>
           <Services/>
      
@@ -119,7 +136,7 @@ export default function Home() {
                <div className="flex flex-col justify-center   w-full items-left ">
                <button className='text-white text-medium bg-[#030D3C] text-center rounded-bl-[8px] cursor-pointer rounded-tr-[8px] w-[176px] py-[18px] mt-[50px]'  onClick={() => {
     const message = `Hi, I want to make an inquiry about the ${product.title}`;
-    const url = `https://wa.me/2348080476742?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   }}>Buy Now</button>
                 </div>
@@ -130,19 +147,95 @@ export default function Home() {
         </div>
         <Link href="/product"><button className="bg-[#1A78D6] text-white mt-14 py-5 md:mx-16 px-5 rounded-lg text-[20px] cursor-pointer font-medium">VIEW ALL PRODUCTS</button></Link>
     </section>
-    <div className="w-full bg-[#021142] h-auto mb-10  py-10">
-      <p className='text-white text-center lg:text-[34px] md:text-3xl md:px-0 px-3 text-2xl'>Check-Out Reviews From Our Clients</p>
-      <div className="grid md:grid-cols-3 max-w-[70%]  mt-7 w-full gap-8 h-auto mx-auto">
-        {
-        reviews.map((item, index) => (
-          <div key={index} className="text-[#48454B] bg-white rounded-lg px-3 border border-[#1225F5] text-center py-5 ">
-            <h2 className="text-[20px] font-semibold">{item.name}</h2>
-            <p className="text-[16px] text-black/50 font-medium italic">"{item.review}"</p>
-          </div>
-        ))
-        }
+    <div className="w-full bg-[#021142] py-16 md:py-20 px-4 mb-10">
+  {/* Header */}
+  <div className="mx-auto max-w-3xl text-center">
+    <span className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-1.5 text-sm font-medium text-blue-200 backdrop-blur-sm">
+      ★ Trusted by our customers
+    </span>
+
+    <h2 className="mt-5 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+      What Our Clients Say
+    </h2>
+
+    <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-white/60 sm:text-base">
+      See what our customers have to say about their experience with
+      Shadowchrone Technologies.
+    </p>
+
+    {/* Rating */}
+    <div className="mt-6 flex items-center justify-center gap-3">
+      <div className="flex gap-1 text-yellow-400">
+        {[1, 2, 3, 4, 5].map((star) => (
+          <span key={star}>★</span>
+        ))}
+      </div>
+
+      <span className="text-sm font-medium text-white/70">
+        5.0 from our customers
+      </span>
+    </div>
+  </div>
+
+  {/* Reviews */}
+  <div className="mx-auto mt-12 grid w-full max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-3">
+    {reviews.map((item, index) => (
+      <div
+  key={index}
+  className="group relative flex min-h-[320px] flex-col rounded-2xl border border-white/10 bg-white p-6 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+>
+  {/* Quote */}
+  <div className="absolute right-6 top-5 text-5xl font-serif leading-none text-blue-100">
+    ”
+  </div>
+
+  {/* Stars */}
+  <div className="flex gap-1 text-sm text-yellow-400">
+    {[1, 2, 3, 4, 5].map((star) => (
+      <span key={star}>★</span>
+    ))}
+  </div>
+
+  {/* Review */}
+  <p className="mt-5 flex-1 pr-5 text-[15px] leading-7 text-gray-600">
+    “{item.review}”
+  </p>
+
+  {/* Divider */}
+  <div className="my-5 h-px w-full bg-gray-100" />
+
+  {/* Customer */}
+  <div className="flex items-center gap-3">
+    {/* Avatar */}
+    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#0060C6] to-[#1225F5] text-sm font-bold text-white">
+      {item.name.charAt(0).toUpperCase()}
+    </div>
+
+    <div>
+      <h3 className="text-sm font-bold text-[#1B1B1B]">
+        {item.name}
+      </h3>
+
+      <div className="mt-0.5 flex items-center gap-1.5">
+        <span className="text-xs text-green-600">✓</span>
+
+        <span className="text-xs font-medium text-gray-400">
+          Verified Customer
+        </span>
       </div>
     </div>
+  </div>
+</div>
+    ))}
+  </div>
+
+  {/* Bottom trust indicator */}
+  <div className="mt-10 flex justify-center">
+    <div className="rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-center text-xs font-medium text-white/50 backdrop-blur-sm">
+      Trusted by customers across Nigeria
+    </div>
+  </div>
+</div>
     <Footer/>
     </div>
   );

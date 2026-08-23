@@ -8,7 +8,7 @@ export const metadata = {
 
 const layout = ({children}) => {
   return (
-    <div className='font-inter mx-auto max-w-[1580px]'>
+    <div className='font-inter mx-auto max-w-395'>
      <Navbar />
      {children}
      <Footer/>

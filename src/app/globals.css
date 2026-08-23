@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
   --font-pop: var(--font-poppins);
   --font-inter: var(--font-inter);
+  --font-kreon: var(--font-kreon);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -48,4 +49,19 @@ body {
 .no-scrollbar {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;     /* Firefox */
+}
+
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
 }

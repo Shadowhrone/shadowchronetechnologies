@@ -2,6 +2,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { useState } from 'react'
+import { number } from "../../../../data/number";
 
 const Button = ({services}) => {
     const [modal, setModal] = useState(false);
@@ -29,7 +30,7 @@ const Button = ({services}) => {
       <p className="text-center">{services.description}</p>
             <button className='text-white text-medium bg-[#030D3C] w-full text-center rounded-bl-[8px] cursor-pointer rounded-tr-[8px]  py-[18px] mt-[50px]'  onClick={() => {
     const message = `Hi, I want to make an inquiry about the ${services.title}`;
-    const url = `https://wa.me/2348080476742?text=${encodeURIComponent(message)}`;
+    const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
     window.open(url, "_blank");
   }}>Get a Quote</button>
       </div>

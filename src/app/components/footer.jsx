@@ -1,14 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import {Socials} from "../../../data/Socials"
 
 const footer = () => {
-    const socialLinks = [
-        {img:'/twitter.svg', text:'products', href: 'https://facebook.com'},
-        {img:'/linkedin.svg', text:'services', href: 'https://twitter.com'},
-        {img:'/facebook.svg', text:'Blog', href: 'https://linkedin.com'},
-       
-    ]
+   
   return (
    
      <div className='   py-15 grid xl:grid-cols-4 md:grid-cols-2 bg-[#021142] text-white justify-center items-start gap-[70px] w-full md:px-20  px-5  '>
@@ -17,9 +13,9 @@ const footer = () => {
        <p>Connect with us on our various social media platforms.</p>
        <div className='flex '>
          {
-            socialLinks.map((link, index)=>(
+            Socials.map((link, index)=>(
                 <div key={index} className='inline-block mr-4  hover:opacity-70 cursor-pointer '>
-                    <Link href={link.href}><Image src={link.img} alt={link.text} width={20} height={21}/></Link>
+                    <Link href={link.href}><Image src={link.icon || null} alt={link.alt} width={20} height={21}/></Link>
                     </div>
             ))}  
             </div>   
@@ -38,7 +34,7 @@ const footer = () => {
         </div>
         <div className='flex flex-col  gap-4'>
               <h2 className='font-medium text-[20px]'>Email</h2>
-            <Link href='mailto:abimbola23@gmail.com' className='  py-3.5 pl-2.5 pr-5 bg-white/30 text-white '>chronetechnologies@gmail.com</Link>
+            <Link href='mailto:chronetechnologies@gmail.com' className='  py-3.5 pl-2.5 pr-5 bg-white/30 text-white '>chronetechnologies@gmail.com</Link>
             <p className='text-white/80'>Feel free to reach us through our email provided above, as we’ll alway respond in due time.</p>
            
         </div>

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import SideBar from "./sideBar";
 import { useState } from 'react';
 import { usePathname } from 'next/navigation'
+import { number } from "../../../data/number";
 
 
  const navItems = [
@@ -34,7 +35,11 @@ const navbar = () => {
            ))}
         </ul>
        </nav>
-        <button className='px-8 py-4 bg-white hover:bg-amber-100 cursor-pointer text-black rounded-2xl lg:block hidden font-medium'>Get a Quote</button>
+        <button className='px-8 py-4 bg-white hover:bg-amber-100 cursor-pointer text-black rounded-2xl lg:block hidden font-medium' onClick={() => {
+            const message = `Hi, I want to make an inquiry about our services/products.`;
+            const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+            window.open(url, "_blank");
+          }}>Get a Quote</button>
         <Image
           src="/hamburgermenu.svg"
           alt="menu"
@@ -62,7 +67,7 @@ const navbar = () => {
   className="px-8 py-4 bg-white hover:bg-amber-100 cursor-pointer text-black rounded-2xl lg:block hidden font-medium"
   onClick={() => {
     const message = 'Hi, I want to make an inquiry about your services/products.'
-    const url = `https://wa.me/2348080476742?text=${encodeURIComponent(message)}`
+    const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`
     window.open(url, '_blank')
   }}
 >

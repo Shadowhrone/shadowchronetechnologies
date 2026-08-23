@@ -28,7 +28,7 @@ const [showToast, setShowToast] = useState(false);
       );
   
       // mailto link (opens Gmail or default email app)
-      window.location.href = `mailto:victoradesola8@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:chronetechnologies@gmail.com?subject=${subject}&body=${body}`;
     
   
       // Show a quick toast popup
@@ -74,8 +74,7 @@ const [showToast, setShowToast] = useState(false);
             <div>
                <h1 className='md:text-3xl text-2xl font-semibold'>Call Us</h1>
                <p className='text-white/76 md:text-xl text-base'>Hot Line 1: +2348077983434</p>
-               <p className='text-white/76 md:text-xl text-base'>Hot Line 2: +2347084424221</p>
-
+               
             </div>
         </div>
         
