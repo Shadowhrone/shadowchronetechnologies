@@ -13,7 +13,7 @@ const items = [
 
 export default function CompStack() {
   return (
-    <div className="w-[75%] mx-auto overflow-hidden font-kreon pt-5 text-[#0060C6]">
+    <div className="w-[75%] mx-auto overflow-hidden font-kreon pt-5 pb-10 text-[#0060C6]">
       <div className="flex w-max animate-marquee gap-10">
         {[...items, ...items].map((item, index) => (
           <div
