@@ -85,7 +85,7 @@ const [showToast, setShowToast] = useState(false);
             {
                 Socials.map((social,idx)=>(
                <div key={idx}>
-                <Link href={social.href}><Image src={social.icon} width={50} height={50} alt={social.alt}/></Link>
+                <Link href={social.href}  target="_blank" rel="noopener noreferrer"><Image src={social.icon} width={50} height={50} alt={social.alt}/></Link>
 
                </div>     
                 ))
