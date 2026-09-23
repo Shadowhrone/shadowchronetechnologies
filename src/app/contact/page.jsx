@@ -28,7 +28,7 @@ const [showToast, setShowToast] = useState(false);
       );
   
       // mailto link (opens Gmail or default email app)
-      window.location.href = `mailto:chronetechnologies@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:shadowchronetechnologies@gmail.com?subject=${subject}&body=${body}`;
     
   
       // Show a quick toast popup
@@ -66,7 +66,7 @@ const [showToast, setShowToast] = useState(false);
             <Image src='/mailsc.svg' width={70} height={70} alt='message md:w-[70px] md:h-[70px] w-[50px] h-[50px]' />
             <div >
                <h1 className='md:text-3xl text-2xl font-semibold'>Email Us</h1>
-                <Link href='mailto:chronetechnologies@gmail.com' className='text-white/76 md:text-xl break-all text-base ' >chronetechnologies@gmail.com </Link>
+                <Link href='mailto:shadowchronetechnologies@gmail.com' className='text-white/76 md:text-xl break-all text-base ' >shadowchronetechnologies@gmail.com </Link>
             </div>
         </div>
          <div className='flex jusify-left items-center gap-5'>
