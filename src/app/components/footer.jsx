@@ -9,7 +9,7 @@ const footer = () => {
    
      <div className='   py-15 grid xl:grid-cols-4 md:grid-cols-2 bg-[#021142] text-white justify-center items-start gap-[70px] w-full md:px-20  px-5  '>
        <div className='flex flex-col w-75 h-42  gap-4'>
- <Image src="/logo.svg" alt="logo" width={250} height={76} className='w-[174px] h-[74px] lg:w-[250px] lg:h-[76px]'/>
+ <Image src="/Logo.svg" alt="logo" width={250} height={76} className='w-[174px] h-[74px] lg:w-[250px] lg:h-[76px]'/>
        <p>Connect with us on our various social media platforms.</p>
        <div className='flex '>
          {
