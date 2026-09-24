@@ -1,6 +1,12 @@
 import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
 
+export async function GET() {
+  return Response.json({
+    message: "Revalidate endpoint is working",
+  });
+}
+
 export async function POST(request) {
   const secret = request.headers.get("x-revalidate-secret");
 
