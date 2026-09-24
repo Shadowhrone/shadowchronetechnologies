@@ -16,7 +16,7 @@ const sideBar = ({ handleToggleOff }) => {
         {/* Top Section */}
         <div className="flex items-center justify-between py-5 px-[30px]">
           <Link href="/" onClick={handleToggleOff}>
-            <Image src='/logo.svg' alt='logo'
+            <Image src='/Logo.svg' alt='logo'
               width={174} height={74}
               className='w-[124px] h-[64px]'
             />
