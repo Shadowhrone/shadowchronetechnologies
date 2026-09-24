@@ -1,5 +1,6 @@
 import { getBlogs } from "../../../lib/api";
 import BlogCard from "../components/BlogCard";
+export const revalidate = 60;
 
 export default async function BlogsPage() {
   const blogs = await getBlogs();

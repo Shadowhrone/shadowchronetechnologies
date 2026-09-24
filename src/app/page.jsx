@@ -12,7 +12,7 @@ import {number} from "../../data/number";
 import CompStack from "./components/CompStack";
 import LatestBlog from "./components/LatestBlogs";
 
-
+export const revalidate = 60;
 export default function Home() {
   const products = [
     {title:"Biometric Card Attendance",image:'/attend.png', description:'Get premium quality Biometric Card Attendance systems for accurate and reliable staff management.'},

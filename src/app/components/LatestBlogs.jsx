@@ -3,6 +3,8 @@ import Image from "next/image";
 import { getBlogs } from "../../../lib/api";
 import LatestBlogClient from "./LatestBlogClient";
 
+export const revalidate = 60;
+
 export default async function LatestBlog() {
   const blogs = await getBlogs();
 
