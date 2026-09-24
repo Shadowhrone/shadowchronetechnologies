@@ -16,7 +16,7 @@ const sideBar = ({ handleToggleOff }) => {
         {/* Top Section */}
         <div className="flex items-center justify-between py-5 px-[30px]">
           <Link href="/" onClick={handleToggleOff}>
-            <Image src='/Logo.svg' alt='logo'
+            <Image src='/logo.svg' alt='logo'
               width={174} height={74}
               className='w-[124px] h-[64px]'
             />
@@ -43,7 +43,7 @@ const sideBar = ({ handleToggleOff }) => {
 
         {/* Footer */}
         <div className="flex flex-col items-center gap-2 py-6">
-                    <Link href='mailto:chronetechnologies@gmail.com' className='text-white text-[16px] font-semibold break-all text-center px-6' >chronetechnologies@gmail.com </Link>
+                    <Link href='mailto:shadowchronetechnologies@gmail.com' className='text-white text-[16px] font-semibold break-all text-center px-6' >shadowchronetechnologies@gmail.com </Link>
           <div className="flex gap-3 mt-2">
             {Socials.map((link, idx) => (
               <Link

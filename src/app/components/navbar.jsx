@@ -27,7 +27,7 @@ const navbar = () => {
     <>
     <div className='w-full hidden lg:block mx-auto max-w-[1580px] h-20 bg-gradient-to-b px-0 from-[#005CC3] to-[#020025] fixed text-white z-999'>
     <header className='lg:w-[95%] w-full py-3 bg-gradient-to-b  from-[#011850] to-[#0060C6] max-w-[1580px] fixed z-1000 mt-6 lg:rounded-[30px] flex justify-between items-center px-3.5 left-0 right-0 mx-auto '>
-       <Image src="/Logo.svg" alt="logo" width={250} height={76} className='w-[174px] h-[74px] lg:w-[250px] lg:h-[76px]'/>
+       <Image src="/logo.svg" alt="logo" width={250} height={76} className='w-[174px] h-[74px] lg:w-[250px] lg:h-[76px]'/>
        <nav className='lg:block hidden'>
         <ul className='flex gap-10 text-lg  font-medium'>
            {navItems.map((item, index)=>(
